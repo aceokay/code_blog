@@ -4,17 +4,29 @@
 <h3>Blog Posts</h3>
 <ul>
   <% @posts.each do |post| %>
-    <li><%= link_to post.title, edit_post_path(post) %></li>
+    <li><%= link_to post.title, post_path(post) %></li>
   <% end %>
 </ul>
 
+<h3>Tags</h3>
+<ul>
+  <% @tags.each do |tag| %>
+    <li><%= link_to tag.category, tag_path(tag) %></li>
+  <% end %>
+</ul>
+
+<h3>Blog Posts Edit</h3>
+<ul>
+  <% @posts.each do |post| %>
+    <li><%= link_to post.title, edit_post_path(post) %></li>
+  <% end %>
+</ul>
 <%= link_to "New Post", new_post_path %>
 
-<h3>Tags</h3>
+<h3>Tags Edit</h3>
 <ul>
   <% @tags.each do |tag| %>
     <li><%= link_to tag.category, edit_tag_path(tag) %></li>
   <% end %>
 </ul>
-
 <%= link_to "New Tag", new_tag_path %>
