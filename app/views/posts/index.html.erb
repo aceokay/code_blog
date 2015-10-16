@@ -1,19 +1,29 @@
-<h1>Code Blog</h1>
-<h6>By AOK</h6>
+<div class="panel panel-danger">
+  <div class="panel-heading">
+    <ul class="list-inline">
+      <li>Posts</li>
+      <li class="pull-right"><%= link_to "New Post", new_post_path %></li>
+    </ul>
+  </div>
+  <ul class="list-group">
+    <% @posts.order(created_at: :desc).each do |post| %>
+      <li class="list-group-item"><%= link_to post.title, post_path(post) %></li>
+    <% end %>
+  </ul>
+</div>
 
-<h3>Blog Posts</h3>
-<ul>
-  <% @posts.each do |post| %>
-    <li><%= link_to post.title, post_path(post) %></li>
-  <% end %>
-</ul>
-
-<h3>Tags</h3>
-<ul>
-  <% @tags.each do |tag| %>
-    <li><%= link_to tag.category, tag_path(tag) %></li>
-  <% end %>
-</ul>
+<div class="panel panel-danger">
+  <div class="panel-heading">
+    <ul class="list-inline">
+      <li>Tags</li>
+    </ul>
+  </div>
+  <ul class="list-inline">
+    <% @tags.order(category: :asc).each do |tag| %>
+      <li><%= link_to tag.category, tag_path(tag) %></li>
+    <% end %>
+  </ul>
+</div>
 
 <h3>Blog Posts Edit</h3>
 <ul>
