@@ -1,0 +1,16 @@
+<h1>Code Blog</h1>
+<h6>By AOK</h6>
+
+<h3>Blog Posts</h3>
+<ul>
+  <% @posts.each do |post| %>
+    <li><%= link_to post.title, post_path(post) %></li>
+  <% end %>
+</ul>
+
+<h3>Tags</h3>
+<ul>
+  <% @tags.each do |tag| %>
+    <li><%= link_to tag.category, tag_posts_path(tag) %></li>
+  <% end %>
+</ul>
