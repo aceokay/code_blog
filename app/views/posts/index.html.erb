@@ -8,6 +8,8 @@
   <% end %>
 </ul>
 
+<%= link_to "New Post", new_post_path %>
+
 <h3>Tags</h3>
 <ul>
   <% @tags.each do |tag| %>
@@ -15,4 +17,4 @@
   <% end %>
 </ul>
 
-<%= link_to "New Post", new_post_path %>
+<%= link_to "New Tag", new_tag_path %>

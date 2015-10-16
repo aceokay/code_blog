@@ -1,0 +1,7 @@
+<%= form_for @tag do |f| %>
+  <div class="form-group">
+    <%= f.label :category %>
+    <%= f.text_field :category, class: "form-control" %>
+  </div>
+  <%= f.submit "Submit", class: "btn btn-default center-block" %>
+<% end %>
