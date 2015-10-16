@@ -1,13 +1,13 @@
 class CreatePostAndTag < ActiveRecord::Migration
   def change
-    create_table :post do |t|
+    create_table :posts do |t|
       t.column :title, :string
       t.column :body, :string
 
       t.timestamps
     end
 
-    create_table :tag do |t|
+    create_table :tags do |t|
       t.column :category, :string
 
       t.timestamps
