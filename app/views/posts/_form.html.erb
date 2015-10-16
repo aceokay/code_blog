@@ -7,5 +7,9 @@
     <%= f.label :body %>
     <%= f.text_area :body, class: "form-control" %>
   </div>
+  <% @tags.each do |tag| %>
+    <%= check_box_tag :tags, tag.id, @post.tags.include?(tag), :name => 'post[tag][]' %>
+    <%= label_tag :tags, tag.category %>
+  <% end %>
   <%= f.submit "Submit", class: "btn btn-default center-block" %>
 <% end %>
