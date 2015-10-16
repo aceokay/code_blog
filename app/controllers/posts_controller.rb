@@ -33,7 +33,16 @@ class PostsController < ApplicationController
 
   def update
     @post = Post.find(params[:id])
+    tag_ids = params[:post][:tag]
     if @post.update(post_params)
+      if tag_ids == nil
+        @post.tags.destroy_all()
+      elsif tag_ids.length > 0
+        tag_ids.each do |tag_id|
+          tag = Tag.find(tag_id)
+          @post.tags.push(tag)
+        end
+      end
       redirect_to edit_post_path(@post)
     else
       render :edit
