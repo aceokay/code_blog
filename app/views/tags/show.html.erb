@@ -1,7 +1,13 @@
 <h1><%= @tag.category %></h1>
-
-<ul>
-  <% @tag.posts.each do |post| %>
-    <li><%= post.title %></li>
-  <% end %>
-</ul>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <ul class="list-inline">
+      <li>Tagged Posts:</li>
+    </ul>
+  </div>
+  <ul class="list-group">
+    <% @tag.posts.order(created_at: :desc).each do |post| %>
+      <li class="list-group-item"><%= post.title %></li>
+    <% end %>
+  </ul>
+</div>
