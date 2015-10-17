@@ -1,0 +1,18 @@
+<h1 class="text-center"><%= @post.title %></h1>
+
+<div class="container well">
+  <h6><%= @post.created_at.to_s(:short) %></h6>
+  <hr>
+  <p>
+    <%= @post.body %>
+  </p>
+</div>
+
+<div class="container">
+  <ul class="list-inline">
+    <li>Tags: </li>
+    <% @post.tags.each do |tag| %>
+      <li><%= link_to tag.category, tag_path(tag) %></li>
+    <% end %>
+  </ul>
+</div>

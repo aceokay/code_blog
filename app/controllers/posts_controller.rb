@@ -4,6 +4,10 @@ class PostsController < ApplicationController
     @tags = Tag.all
   end
 
+  def show
+    @post = Post.find(params[:id])
+  end
+
   def new
    @post = Post.new
    @tags = Tag.all
