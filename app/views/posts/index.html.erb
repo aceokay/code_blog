@@ -7,7 +7,12 @@
   </div>
   <ul class="list-group">
     <% @posts.order(created_at: :desc).each do |post| %>
-      <li class="list-group-item"><%= link_to post.title, post_path(post) %></li>
+      <li class="list-group-item">
+        <%= link_to post.title, post_path(post) %>
+        <small class="pull-right">
+          <%= link_to "Edit", edit_post_path(post) %>
+        </small>
+      </li>
     <% end %>
   </ul>
 </div>
@@ -16,27 +21,30 @@
   <div class="panel-heading">
     <ul class="list-inline">
       <li>Tags</li>
+      <li class="pull-right"><%= link_to "New Tag", new_tag_path %></li>
     </ul>
   </div>
-  <ul class="list-inline">
-    <% @tags.order(category: :asc).each do |tag| %>
-      <li><%= link_to tag.category, tag_path(tag) %></li>
-    <% end %>
-  </ul>
+  <div class="container">
+    <ul class="list-inline">
+      <% @tags.order(category: :asc).each do |tag| %>
+        <li><%= link_to tag.category, tag_path(tag) %></li>
+      <% end %>
+    </ul>
+  </div>
 </div>
 
-<h3>Blog Posts Edit</h3>
-<ul>
-  <% @posts.each do |post| %>
-    <li><%= link_to post.title, edit_post_path(post) %></li>
-  <% end %>
-</ul>
-<%= link_to "New Post", new_post_path %>
-
-<h3>Tags Edit</h3>
-<ul>
-  <% @tags.each do |tag| %>
-    <li><%= link_to tag.category, edit_tag_path(tag) %></li>
-  <% end %>
-</ul>
-<%= link_to "New Tag", new_tag_path %>
+<div class="panel panel-danger">
+  <div class="panel-heading">
+    <ul class="list-inline">
+      <li>Edit Tags</li>
+      <li class="pull-right"><%= link_to "New Tag", new_tag_path %></li>
+    </ul>
+  </div>
+  <div class="container">
+    <ul class="list-inline">
+      <% @tags.order(category: :asc).each do |tag| %>
+        <li><%= link_to tag.category, edit_tag_path(tag) %></li>
+      <% end %>
+    </ul>
+  </div>
+</div>
