@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  include ActionView::Helpers::TextHelper
+
   def index
     @posts = Post.all
     @tags = Tag.all
@@ -17,10 +19,12 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     tag_ids = params[:post][:tag]
     if @post.save
-      if tag_ids.length > 0
-        tag_ids.each do |tag_id|
-          tag = Tag.find(tag_id)
-          @post.tags.push(tag)
+      if tag_ids != nil
+        if tag_ids.length > 0
+          tag_ids.each do |tag_id|
+            tag = Tag.find(tag_id)
+            @post.tags.push(tag)
+          end
         end
       end
       redirect_to posts_path

@@ -1,11 +1,7 @@
-<h1 class="text-center"><%= @post.title %></h1>
-
-<div class="container well">
-  <h6><%= @post.created_at.to_s(:short) %></h6>
+<div class="container">
+  <h3><small class="post-date"><%= @post.created_at.to_s(:short) %></small><%= @post.title %></h3>
   <hr>
-  <p>
-    <%= @post.body %>
-  </p>
+  <%= simple_format(@post.body).html_safe %>
 </div>
 
 <div class="container">
