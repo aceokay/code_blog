@@ -1,0 +1,29 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <ul class="list-inline">
+      <li>Posts</li>
+    </ul>
+  </div>
+  <ul class="list-group">
+    <% @posts.order(created_at: :desc).each do |post| %>
+      <li class="list-group-item">
+        <%= link_to post.title, post_path(post) %>
+      </li>
+    <% end %>
+  </ul>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <ul class="list-inline">
+      <li>Tags</li>
+    </ul>
+  </div>
+  <div class="container">
+    <ul class="list-inline">
+      <% @tags.order(category: :asc).each do |tag| %>
+        <li><%= link_to tag.category, tag_path(tag) %></li>
+      <% end %>
+    </ul>
+  </div>
+</div>

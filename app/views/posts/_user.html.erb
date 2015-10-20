@@ -1,0 +1,34 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <ul class="list-inline">
+      <li>Posts</li>
+      <li class="pull-right"><%= link_to "New Post", new_post_path %></li>
+    </ul>
+  </div>
+  <ul class="list-group">
+    <% @posts.order(created_at: :desc).each do |post| %>
+      <li class="list-group-item">
+        <%= link_to post.title, post_path(post) %>
+        <small class="pull-right">
+          <%= link_to "Edit", edit_post_path(post) %>
+        </small>
+      </li>
+    <% end %>
+  </ul>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <ul class="list-inline">
+      <li>Edit Tags</li>
+      <li class="pull-right"><%= link_to "New Tag", new_tag_path %></li>
+    </ul>
+  </div>
+  <div class="container">
+    <ul class="list-inline">
+      <% @tags.order(category: :asc).each do |tag| %>
+        <li><%= link_to tag.category, edit_tag_path(tag) %></li>
+      <% end %>
+    </ul>
+  </div>
+</div>
