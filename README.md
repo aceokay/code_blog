@@ -4,7 +4,7 @@
 By Austin Kincaid
 
 ###Description
-An artisianl blog backed with Ruby on Rails.
+An artisinal blog backed with Ruby on Rails.
 
 _Goals for future updates_
 * _Add authentication for admin access to edit posts._
