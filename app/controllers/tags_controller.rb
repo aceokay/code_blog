@@ -12,6 +12,7 @@ class TagsController < ApplicationController
     if @tag.save
       redirect_to posts_path
     else
+      flash[:notice] = "Please fill the Category field"
       render :new
     end
   end
