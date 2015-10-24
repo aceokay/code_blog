@@ -1,7 +1,7 @@
-require 'rails_helper'
-
-describe "User sign-up and login path" do
-  user = FactoryGirl.create(:user)
+# require 'rails_helper'
+#
+# describe "User sign-up and login path" do
+#   user = FactoryGirl.create(:user)
   # it "adds a user" do
   #   visit '/'
   #   click_on "Sign Up"
@@ -34,4 +34,4 @@ describe "User sign-up and login path" do
   #   expect(page).to have_content "wackoveture"
   #   expect(page).not_to have_content "Log Out"
   # end
-end
+# end
