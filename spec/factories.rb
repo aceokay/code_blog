@@ -5,12 +5,12 @@ FactoryGirl.define do
       (n + rand(100000)).to_s + "@example.com"
     end
     password("cheese")
-    # admin(true)
+    admin(true)
   end
 
-  # factory(:comment) do
-  #   body("I agree wit chu")
-  # end
+  factory(:comment) do
+    body("I agree wit chu")
+  end
 
   factory(:tag) do
     sequence :category do |n|
