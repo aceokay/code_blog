@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
   has_many :posts
   has_many :comments
   validates_confirmation_of :password
+  validates :name, :email, presence: true
   validates :email, uniqueness: true
   before_save :encrypt_password
   # Enact when user model is updated
