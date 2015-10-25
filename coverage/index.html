@@ -14,27 +14,27 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2015-10-24T19:15:35-07:00">2015-10-24T19:15:35-07:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2015-10-24T21:02:28-07:00">2015-10-24T21:02:28-07:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="green">98.48%</span></span>
+    (<span class="covered_percent"><span class="green">95.3%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         5.11
+         4.98
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
-    <b>38</b> files in total.
-    <b>462</b> relevant lines. 
-    <span class="green"><b>455</b> lines covered</span> and
-    <span class="red"><b>7</b> lines missed </span>
+    <b>39</b> files in total.
+    <b>489</b> relevant lines. 
+    <span class="green"><b>466</b> lines covered</span> and
+    <span class="red"><b>23</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -58,6 +58,16 @@
         <td>5</td>
         <td>0</td>
         <td>37.4</td>
+      </tr>
+      
+      <tr>
+        <td class="strong"><a href="#2dddecec6073769ddce6c55154c5df7e16a855d8" class="src_link" title="app/controllers/comments_controller.rb">app/controllers/comments_controller.rb</a></td>
+        <td class="red strong">27.27 %</td>
+        <td>32</td>
+        <td>22</td>
+        <td>6</td>
+        <td>16</td>
+        <td>0.3</td>
       </tr>
       
       <tr>
@@ -143,11 +153,11 @@
       <tr>
         <td class="strong"><a href="#32e542caab2f3f8c71fb6899b1f3bc8166cb423e" class="src_link" title="app/models/user.rb">app/models/user.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>30</td>
-        <td>16</td>
-        <td>16</td>
+        <td>29</td>
+        <td>20</td>
+        <td>20</td>
         <td>0</td>
-        <td>6.0</td>
+        <td>6.8</td>
       </tr>
       
       <tr>
@@ -273,9 +283,9 @@
       <tr>
         <td class="strong"><a href="#d121b1c0b0c63a205678fbcde12b349895d25339" class="src_link" title="config/routes.rb">config/routes.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>10</td>
-        <td>8</td>
-        <td>8</td>
+        <td>14</td>
+        <td>9</td>
+        <td>9</td>
         <td>0</td>
         <td>1.0</td>
       </tr>
@@ -427,7 +437,7 @@
         <td>6</td>
         <td>6</td>
         <td>0</td>
-        <td>226.3</td>
+        <td>231.2</td>
       </tr>
       
     </tbody>
@@ -515,6 +525,216 @@
         </li>
       
         <li class="never" data-hits="" data-linenumber="10">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+    </ol>
+  </pre>
+</div>
+      
+        <div class="source_table" id="2dddecec6073769ddce6c55154c5df7e16a855d8">
+  <div class="header">
+    <h3>app/controllers/comments_controller.rb</h3>
+    <h4><span class="red">27.27 %</span> covered</h4>
+    <div>
+      <b>22</b> relevant lines. 
+      <span class="green"><b>6</b> lines covered</span> and
+      <span class="red"><b>16</b> lines missed.</span>
+    </div>
+  </div>
+  
+  <pre>
+    <ol>
+      
+        <li class="covered" data-hits="1" data-linenumber="1">
+          <span class="hits">1</span>
+          
+          <code class="ruby">class CommentsController &lt; ApplicationController</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="2">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def new</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="3">
+          
+          
+          <code class="ruby">    @post = Post.find(params[:post_id])</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="4">
+          
+          
+          <code class="ruby">    @comment = @post.comments.new</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="5">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="6">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="7">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def create</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="8">
+          
+          
+          <code class="ruby">    @post = Post.find(params[:post_id])</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="9">
+          
+          
+          <code class="ruby">    @comment = @post.comments.new(comment_params)</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="10">
+          
+          
+          <code class="ruby">    @comment.user_id = current_user.id</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="11">
+          
+          
+          <code class="ruby">    if @comment.save</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="12">
+          
+          
+          <code class="ruby">      flash[:notice] = &quot;Comment made.&quot;</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="13">
+          
+          
+          <code class="ruby">      redirect_to post_path(@post)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="14">
+          
+          
+          <code class="ruby">    else</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="15">
+          
+          
+          <code class="ruby">      flash[:notice] = &quot;Please try again, something went wrong.&quot;</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="16">
+          
+          
+          <code class="ruby">      redirect_to new_post_comment_path(@post)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="17">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="18">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="19">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="20">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def destroy</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="21">
+          
+          
+          <code class="ruby">    post = Post.find(params[:post_id])</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="22">
+          
+          
+          <code class="ruby">    @comment = Comment.find(params[:id])</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="23">
+          
+          
+          <code class="ruby">    @comment.destroy</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="24">
+          
+          
+          <code class="ruby">    flash[:success] = &quot;Comment deleted.&quot;</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="25">
+          
+          
+          <code class="ruby">    redirect_to post_path(post)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="26">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="27">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="28">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  private</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="29">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def comment_params</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="30">
+          
+          
+          <code class="ruby">    params.require(:comment).permit(:title, :body)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="31">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="32">
           
           
           <code class="ruby">end</code>
@@ -1849,8 +2069,8 @@
     <h3>app/models/user.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>16</b> relevant lines. 
-      <span class="green"><b>16</b> lines covered</span> and
+      <b>20</b> relevant lines. 
+      <span class="green"><b>20</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -1906,133 +2126,127 @@
           <code class="ruby">  before_save :encrypt_password</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="9">
+        <li class="covered" data-hits="1" data-linenumber="9">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">  # Enact when user model is updated</code>
+          <code class="ruby">  before_save :make_admin</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="10">
           
           
-          <code class="ruby">  # before_save :make_admin</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="11">
-          
-          
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="12">
+        <li class="covered" data-hits="1" data-linenumber="11">
           <span class="hits">1</span>
           
           <code class="ruby">  def encrypt_password</code>
         </li>
       
-        <li class="covered" data-hits="19" data-linenumber="13">
+        <li class="covered" data-hits="19" data-linenumber="12">
           <span class="hits">19</span>
           
           <code class="ruby">    self.password_salt = BCrypt::Engine.generate_salt</code>
         </li>
       
-        <li class="covered" data-hits="19" data-linenumber="14">
+        <li class="covered" data-hits="19" data-linenumber="13">
           <span class="hits">19</span>
           
           <code class="ruby">    self.password_hash = BCrypt::Engine.hash_secret(password, password_salt)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="15">
+        <li class="never" data-hits="" data-linenumber="14">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="16">
+        <li class="never" data-hits="" data-linenumber="15">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="17">
+        <li class="covered" data-hits="1" data-linenumber="16">
           <span class="hits">1</span>
           
           <code class="ruby">  def self.authenticate(email, password)</code>
         </li>
       
-        <li class="covered" data-hits="16" data-linenumber="18">
+        <li class="covered" data-hits="16" data-linenumber="17">
           <span class="hits">16</span>
           
           <code class="ruby">    user = User.where(email: email).first</code>
         </li>
       
-        <li class="covered" data-hits="16" data-linenumber="19">
+        <li class="covered" data-hits="16" data-linenumber="18">
           <span class="hits">16</span>
           
           <code class="ruby">    if user &amp;&amp; user.password_hash == BCrypt::Engine.hash_secret(password, user.password_salt)</code>
         </li>
       
-        <li class="covered" data-hits="15" data-linenumber="20">
+        <li class="covered" data-hits="15" data-linenumber="19">
           <span class="hits">15</span>
           
           <code class="ruby">      user</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="21">
+        <li class="never" data-hits="" data-linenumber="20">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="22">
+        <li class="never" data-hits="" data-linenumber="21">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="23">
+        <li class="never" data-hits="" data-linenumber="22">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="24">
+        <li class="covered" data-hits="1" data-linenumber="23">
           <span class="hits">1</span>
           
           <code class="ruby">  private</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="25">
+        <li class="covered" data-hits="1" data-linenumber="24">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">  # def make_admin</code>
+          <code class="ruby">  def make_admin</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="26">
+        <li class="covered" data-hits="19" data-linenumber="25">
+          <span class="hits">19</span>
           
+          <code class="ruby">    if User.all.length &lt; 1</code>
+        </li>
+      
+        <li class="covered" data-hits="19" data-linenumber="26">
+          <span class="hits">19</span>
           
-          <code class="ruby">  #   if User.all.length &lt; 1</code>
+          <code class="ruby">      self.admin = true</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="27">
           
           
-          <code class="ruby">  #     self.admin = true</code>
+          <code class="ruby">    end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="28">
           
           
-          <code class="ruby">  #   end</code>
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="29">
-          
-          
-          <code class="ruby">  # end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="30">
           
           
           <code class="ruby">end</code>
@@ -3145,8 +3359,8 @@
     <h3>config/routes.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>8</b> relevant lines. 
-      <span class="green"><b>8</b> lines covered</span> and
+      <b>9</b> relevant lines. 
+      <span class="green"><b>9</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -3196,19 +3410,43 @@
           <code class="ruby">  resources :users</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="8">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="8">
           
-          <code class="ruby">  resources :posts</code>
+          
+          <code class="ruby"></code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="9">
           <span class="hits">1</span>
           
+          <code class="ruby">  resources :posts do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="10">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    resources :comments</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="11">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="12">
+          
+          
+          <code class="ruby">  </code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="13">
+          <span class="hits">1</span>
+          
           <code class="ruby">  resources :tags</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="10">
+        <li class="never" data-hits="" data-linenumber="14">
           
           
           <code class="ruby">end</code>
@@ -5962,8 +6200,8 @@
           <code class="ruby">  def self.connection</code>
         </li>
       
-        <li class="covered" data-hits="1353" data-linenumber="6">
-          <span class="hits">1353</span>
+        <li class="covered" data-hits="1382" data-linenumber="6">
+          <span class="hits">1382</span>
           
           <code class="ruby">    @@shared_connection || retrieve_connection</code>
         </li>

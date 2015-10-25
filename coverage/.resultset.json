@@ -294,6 +294,40 @@
         1,
         null
       ],
+      "/Users/austinkincaid/Desktop/code_blog/app/controllers/comments_controller.rb": [
+        1,
+        1,
+        0,
+        0,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        null,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        null,
+        null,
+        1,
+        1,
+        0,
+        null,
+        null
+      ],
       "/Users/austinkincaid/Desktop/code_blog/app/controllers/posts_controller.rb": [
         1,
         1,
@@ -511,8 +545,7 @@
         1,
         1,
         1,
-        null,
-        null,
+        1,
         null,
         1,
         19,
@@ -527,9 +560,9 @@
         null,
         null,
         1,
-        null,
-        null,
-        null,
+        1,
+        19,
+        19,
         null,
         null,
         null
@@ -578,7 +611,11 @@
         1,
         null,
         1,
+        null,
         1,
+        1,
+        null,
+        null,
         1,
         null
       ],
@@ -588,7 +625,7 @@
         1,
         null,
         1,
-        1353,
+        1382,
         null,
         null,
         1
@@ -888,6 +925,6 @@
         null
       ]
     },
-    "timestamp": 1445739335
+    "timestamp": 1445745748
   }
 }

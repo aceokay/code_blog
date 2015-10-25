@@ -15,6 +15,4 @@
 
 <%= link_to "Comment", new_post_comment_path(@post) %>
 
-<% @post.comments.each do |comment| %>
-  <%= render "comments/block", comment: comment %>
-<% end %>
+<%= render "comments/block", post: @post %>
