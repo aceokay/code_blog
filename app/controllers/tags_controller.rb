@@ -27,6 +27,7 @@ class TagsController < ApplicationController
     if @tag.update(tag_params)
       redirect_to posts_path
     else
+      flash[:notice] = "Please fill the Category field"
       render :edit
     end
   end
