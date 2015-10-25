@@ -51,6 +51,7 @@ class PostsController < ApplicationController
           @post.tags.push(tag)
         end
       end
+      flash[:success] = "Post updated."
       redirect_to posts_path
     else
       flash[:notice] = "You must fill in all parts of the form."
