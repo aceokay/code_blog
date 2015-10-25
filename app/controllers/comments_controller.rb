@@ -30,7 +30,7 @@ class CommentsController < ApplicationController
       redirect_to post_path(@post)
     else
       flash[:danger] = "Please try again, something went wrong."
-      redirect_to edit_post_comment_path(@post, comment)
+      redirect_to edit_post_comment_path(@post, @comment)
     end
   end
 

@@ -10,6 +10,7 @@ FactoryGirl.define do
   end
 
   factory :non_admin_user, class: User do
+    id(2)
     name('Duke')
     sequence :email do |n|
       (n + rand(100000)).to_s + "@example.com"
@@ -19,18 +20,22 @@ FactoryGirl.define do
   end
 
   factory(:post) do
+    id(1)
     title("Love is real")
     body("Build a home at home with love.")
     user_id(1)
+  end
+
+  factory(:comment) do
+    title("I agree, this is a comment")
+    body("Such great comments here!")
+    user_id(2)
+    post_id(1)
   end
 
   factory(:tag) do
     sequence :category do |n|
       (n + rand(100000) + rand(n)).to_s + "deezl tru"
     end
-  end
-
-  factory(:comment) do
-    body("I agree wit chu")
   end
 end
