@@ -36,8 +36,7 @@
     <!-- Post Content -->
     <p><%= simple_format(@post.body) %></p>
     <hr>
+    <%= render "comments/block", post: @post %>
   </div>
-
-  <%= render "comments/block", post: @post %>
 </div>
 <!-- /.row -->

@@ -17,6 +17,12 @@
               <small><%= comment.created_at.to_s(:short) %></small>
           </h4>
           <p><%= simple_format(comment.body) %></p>
+          <% if comment.user_id  == current_user.id || current_user.admin %>
+            <%= link_to "Delete", post_comment_path(@post, comment), class: "btn btn-danger pull-right", data: {confirm: "Are you sure?", method: "delete"} %>
+          <% end %>
+          <% if comment.user_id  == current_user.id %>
+            <%= link_to "Edit", edit_post_comment_path(@post, comment), class: "btn btn-default pull-right" %>
+          <% end %>
       </div>
   </div>
 <% end %>
