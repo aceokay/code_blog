@@ -16,7 +16,8 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(post_params)
+    @user = current_user
+    @post = @user.posts.new(post_params)
     tag_ids = params[:post][:tag]
     if @post.save
       if tag_ids != nil

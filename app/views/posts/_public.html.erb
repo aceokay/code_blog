@@ -1,29 +1,43 @@
-<div class="panel panel-default">
-  <div class="panel-heading">
-    <ul class="list-inline">
-      <li>Posts</li>
-    </ul>
+<div class="row">
+  <!-- Blog Sidebar Widgets Column -->
+  <div class="col-md-4 pull-right">
+    <!-- Blog Categories Well -->
+    <div class="well">
+      <h4>Blog Tags</h4>
+      <div class="row">
+        <div class="col-lg-6">
+          <ul class="list-unstyled">
+            <% @tags.order(category: :asc).each do |tag| %>
+              <li><%= link_to tag.category, tag_path(tag) %></li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+      <!-- /.row -->
+    </div>
+    <!-- Side Widget Well -->
+    <div class="well">
+      <h4>An Artisinal Blog <small class="pull-right">By Austin Kincaid</small></h4>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore, perspiciatis adipisci accusamus laudantium odit aliquam repellat tempore quos aspernatur vero.</p>
+    </div>
   </div>
-  <ul class="list-group">
-    <% @posts.order(created_at: :desc).each do |post| %>
-      <li class="list-group-item">
-        <%= link_to post.title, post_path(post) %>
-      </li>
-    <% end %>
-  </ul>
-</div>
 
-<div class="panel panel-default">
-  <div class="panel-heading">
-    <ul class="list-inline">
-      <li>Tags</li>
-    </ul>
-  </div>
-  <div class="container">
-    <ul class="list-inline">
-      <% @tags.order(category: :asc).each do |tag| %>
-        <li><%= link_to tag.category, tag_path(tag) %></li>
-      <% end %>
-    </ul>
-  </div>
+  <% @posts.order(created_at: :desc).each do |post| %>
+    <!-- Blog Post Content Column -->
+    <div class="col-lg-8">
+      <!-- Blog Post -->
+      <!-- Title -->
+      <h2><%= link_to post.title, post_path(post) %></h2>
+      <!-- Author -->
+      <p class="lead">by <a href="#"><%= post.user.name %></a></p>
+      <hr>
+      <!-- Date/Time -->
+      <p><span class="glyphicon glyphicon-time"></span><%= post.created_at.to_s(:short) %></p>
+      <hr>
+      <!-- Post Content -->
+      <p><%= post.body %></p>
+      <hr>
+    </div>
+  <% end %>
 </div>
+<!-- /.row -->
