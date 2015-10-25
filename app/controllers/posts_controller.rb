@@ -29,7 +29,8 @@ class PostsController < ApplicationController
       end
       redirect_to posts_path
     else
-      render :new
+      flash[:notice] = "You must fill in all parts of the form."
+      redirect_to new_post_path
     end
   end
 

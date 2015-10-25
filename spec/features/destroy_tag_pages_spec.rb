@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe "Tag delete path" do
+describe "Tag destroy path" do
   user = FactoryGirl.create(:user)
   tag = FactoryGirl.create(:tag)
   it "deletes a given tag" do

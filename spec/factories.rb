@@ -8,6 +8,11 @@ FactoryGirl.define do
     admin(true)
   end
 
+  factory(:post) do
+    title("Love is real")
+    body("Build a home at home with love.")
+  end
+
   factory(:comment) do
     body("I agree wit chu")
   end
