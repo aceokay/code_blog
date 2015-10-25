@@ -12,7 +12,9 @@
     <% end %>
   </ul>
 </div>
-<% if @post.comments.any? %>
-  <% @post.comments.each do |comment| %>
-  <% end %>
+
+<%= link_to "Comment", new_post_comment_path(@post) %>
+
+<% @post.comments.each do |comment| %>
+  <%= render "comments/block", comment: comment %>
 <% end %>
