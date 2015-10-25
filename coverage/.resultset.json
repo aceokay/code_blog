@@ -548,8 +548,13 @@
         1,
         1,
         1,
+        0,
+        null,
+        1,
+        1,
         null,
         null,
+        1,
         1,
         1,
         null,
@@ -558,6 +563,10 @@
         1,
         5,
         null,
+        null,
+        null,
+        1,
+        1,
         null,
         null
       ],
@@ -820,6 +829,34 @@
         null,
         null
       ],
+      "/Users/austinkincaid/Desktop/code_blog/spec/features/show_tag_pages_spec.rb": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
       "/Users/austinkincaid/Desktop/code_blog/spec/models/post_spec.rb": [
         1,
         null,
@@ -851,6 +888,6 @@
         null
       ]
     },
-    "timestamp": 1445738478
+    "timestamp": 1445739335
   }
 }
