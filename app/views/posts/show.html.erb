@@ -12,3 +12,7 @@
     <% end %>
   </ul>
 </div>
+<% if @post.comments.any? %>
+  <% @post.comments.each do |comment| %>
+  <% end %>
+<% end %>
