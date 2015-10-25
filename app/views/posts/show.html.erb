@@ -1,18 +1,43 @@
-<div class="container">
-  <h3><small class="post-date"><%= @post.created_at.to_s(:short) %></small><%= @post.title %></h3>
-  <hr>
-  <%= simple_format(@post.body) %>
+<div class="row">
+  <!-- Blog Sidebar Widgets Column -->
+  <div class="col-md-4 pull-right">
+    <!-- Blog Categories Well -->
+    <div class="well">
+      <h4>Post Tags</h4>
+      <div class="row">
+        <div class="col-lg-6">
+          <ul class="list-unstyled">
+            <% @post.tags.order(category: :asc).each do |tag| %>
+              <li><%= link_to tag.category, tag_path(tag) %></li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+      <!-- /.row -->
+    </div>
+    <!-- Side Widget Well -->
+    <div class="well">
+      <h4>An Artisinal Blog <small class="pull-right">By Austin Kincaid</small></h4>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore, perspiciatis adipisci accusamus laudantium odit aliquam repellat tempore quos aspernatur vero.</p>
+    </div>
+  </div>
+
+  <!-- Blog Post Content Column -->
+  <div class="col-lg-8">
+    <!-- Blog Post -->
+    <!-- Title -->
+    <h2><%= @post.title %></h2>
+    <!-- Author -->
+    <p class="lead">by <a href="#"><%= @post.user.name %></a></p>
+    <hr>
+    <!-- Date/Time -->
+    <p><span class="glyphicon glyphicon-time"></span> <%= @post.created_at.to_s(:short) %></p>
+    <hr>
+    <!-- Post Content -->
+    <p><%= simple_format(@post.body) %></p>
+    <hr>
+  </div>
+
+  <%= render "comments/block", post: @post %>
 </div>
-
-<div class="container">
-  <ul class="list-inline">
-    <li>Tags: </li>
-    <% @post.tags.each do |tag| %>
-      <li><%= link_to tag.category, tag_path(tag) %></li>
-    <% end %>
-  </ul>
-</div>
-
-<%= link_to "Comment", new_post_comment_path(@post) %>
-
-<%= render "comments/block", post: @post %>
+<!-- /.row -->

@@ -1,11 +1,22 @@
-<% @post.comments.each do |comment| %>
-  <h4><%= comment.title %></h4>
+<!-- Blog Comments -->
 
-  <p><%= comment.body %></p>
-  <% if comment.user_id  == current_user.id || current_user.admin %>
-    <%= link_to "Delete", post_comment_path(@post, comment), data: {confirm: "Are you sure?", method: "delete"} %>
-  <% end %>
-  <% if comment.user_id  == current_user.id %>
-    <%= link_to "Edit", edit_post_comment_path(@post, comment) %>
-  <% end %>
+<!-- Comments Link -->
+<% if current_user != nil %>
+  <div class="well">
+      <%= link_to "Leave a Comment", new_post_comment_path(@post), {class: "btn btn-primary center-block"} %>
+  </div>
+  <hr>
+<% end %>
+
+  <!-- Posted Comments -->
+<% @post.comments.each do |comment| %>
+  <!-- Comment -->
+  <div class="media">
+      <div class="media-body">
+          <h4 class="media-heading"><%= comment.title %>
+              <small><%= comment.created_at.to_s(:short) %></small>
+          </h4>
+          <p><%= simple_format(comment.body) %></p>
+      </div>
+  </div>
 <% end %>
