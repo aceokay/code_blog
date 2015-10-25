@@ -7,7 +7,7 @@ describe "Session creation/User login path" do
     click_on "Sign In"
     fill_in 'Email', :with => user.email
     fill_in 'Password', :with => user.password
-    click_on 'Log in'
+    click_on 'Go'
     expect(page).to have_content "You've been logged in."
   end
 
@@ -17,7 +17,7 @@ describe "Session creation/User login path" do
     click_on "Sign In"
     fill_in 'Email', :with => user.email
     fill_in 'Password', :with => "chee"
-    click_on 'Log in'
+    click_on 'Go'
     expect(page).to have_content "There was a problem logging you in."
   end
 
@@ -27,7 +27,7 @@ describe "Session creation/User login path" do
     click_on "Sign In"
     fill_in 'Email', :with => user.email
     fill_in 'Password', :with => user.password
-    click_on 'Log in'
+    click_on 'Go'
     click_on 'Log Out'
     expect(page).to have_content "You've been logged out successfully."
   end

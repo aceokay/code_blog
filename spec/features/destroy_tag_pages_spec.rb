@@ -8,7 +8,7 @@ describe "Tag destroy path" do
     click_on "Sign In"
     fill_in 'Email', :with => user.email
     fill_in 'Password', :with => user.password
-    click_on 'Log in'
+    click_on 'Go'
     click_on tag.category
     click_on 'Delete'
     expect(page).not_to have_content tag.category

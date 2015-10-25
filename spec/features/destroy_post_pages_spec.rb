@@ -8,7 +8,7 @@ describe "Destroy Post path" do
     click_on "Sign In"
     fill_in 'Email', :with => user.email
     fill_in 'Password', :with => user.password
-    click_on 'Log in'
+    click_on 'Go'
     click_on 'Edit', match: :first
     click_on 'Delete'
     expect(page).not_to have_content post.title

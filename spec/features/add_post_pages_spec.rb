@@ -7,7 +7,7 @@ describe "Add Post path" do
     click_on "Sign In"
     fill_in 'Email', :with => user.email
     fill_in 'Password', :with => user.password
-    click_on 'Log in'
+    click_on 'Go'
     click_on 'New Post'
     fill_in 'Title', :with => "Two Scoops"
     fill_in 'Body', :with => "I love ice-cream and you. :)"
@@ -21,7 +21,7 @@ describe "Add Post path" do
     click_on "Sign In"
     fill_in 'Email', :with => user.email
     fill_in 'Password', :with => user.password
-    click_on 'Log in'
+    click_on 'Go'
     click_on 'New Post'
     fill_in 'Title', :with => "Two Scoops"
     fill_in 'Body', :with => ""

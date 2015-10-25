@@ -10,7 +10,7 @@ describe "Edit Comment path" do
     click_on "Sign In"
     fill_in 'Email', :with => non_admin.email
     fill_in 'Password', :with => non_admin.password
-    click_on 'Log in'
+    click_on 'Go'
     click_on post.title
     click_on 'Edit'
     fill_in 'Title', :with => "Where I Agree With You"
@@ -30,7 +30,7 @@ describe "Edit Comment path" do
     click_on "Sign In"
     fill_in 'Email', :with => non_admin.email
     fill_in 'Password', :with => non_admin.password
-    click_on 'Log in'
+    click_on 'Go'
     click_on post.title
     click_on 'Edit'
     fill_in 'Title', :with => ""

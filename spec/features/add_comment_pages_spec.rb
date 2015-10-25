@@ -8,7 +8,7 @@ describe "Add Comment path" do
     click_on "Sign In"
     fill_in 'Email', :with => user.email
     fill_in 'Password', :with => user.password
-    click_on 'Log in'
+    click_on 'Go'
     click_on post.title
     click_on 'Leave a Comment'
     fill_in 'Title', :with => "Where I Agree With You"
@@ -26,7 +26,7 @@ describe "Add Comment path" do
     click_on "Sign In"
     fill_in 'Email', :with => user.email
     fill_in 'Password', :with => user.password
-    click_on 'Log in'
+    click_on 'Go'
     click_on post.title
     click_on 'Leave a Comment'
     fill_in 'Title', :with => ""

@@ -15,14 +15,17 @@ class UsersController < ApplicationController
         flash[:notice] = "Welcome to the site!"
         session[:user_id] = @user.id
         redirect_to "/"
-      # else
-      #   flash[:alert] = "There was a problem logging you in."
-      #   redirect_to log_in_path
       end
     else
       flash[:alert] = "There was a problem creating your account. Please try again."
       redirect_to :back
     end
+  end
+
+  def edit
+  end
+
+  def update
   end
 
   private

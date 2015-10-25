@@ -10,7 +10,7 @@
 #     click_on "Sign In"
 #     fill_in 'Email', :with => admin.email
 #     fill_in 'Password', :with => admin.password
-#     click_on 'Log in'
+#     click_on 'Go'
 #     click_on 'Edit', match: :first
 #     fill_in 'Title', :with => "Two Scoops"
 #     fill_in 'Body', :with => "I love ice-cream and you. :)"
@@ -19,7 +19,7 @@
 #     click_button 'Log Out'
 #     fill_in 'Email', :with => user.email
 #     fill_in 'Password', :with => user.password
-#     click_on 'Log in'
+#     click_on 'Go'
 #     click_on tag.category
 #     expect(page).to have_content 'Two Scoops'
 #   end
