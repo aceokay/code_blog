@@ -1,9 +1,9 @@
 require 'rails_helper'
 
 describe "Tag edit path" do
-  user = FactoryGirl.create(:user)
-  tag = FactoryGirl.create(:tag)
   it "edits a given tag" do
+    user = FactoryGirl.create(:user)
+    tag = FactoryGirl.create(:tag)
     visit '/'
     click_on "Sign In"
     fill_in 'Email', :with => user.email
@@ -16,6 +16,8 @@ describe "Tag edit path" do
   end
 
   it "rerenders form for tag edit if left blank" do
+    user = FactoryGirl.create(:user)
+    tag = FactoryGirl.create(:tag)
     visit '/'
     click_on "Sign In"
     fill_in 'Email', :with => user.email

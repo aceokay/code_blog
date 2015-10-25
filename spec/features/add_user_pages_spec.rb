@@ -14,6 +14,7 @@ describe "User sign-up path" do
   end
 
   it "displays an error if sign up is poor" do
+    user = FactoryGirl.create(:user)
     visit '/'
     click_on "Sign Up"
     fill_in 'Name', :with => user.name

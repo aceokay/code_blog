@@ -1,9 +1,8 @@
 require 'rails_helper'
 
 describe "Tag creation path" do
-  user = FactoryGirl.create(:user)
-  tag = FactoryGirl.create(:tag)
   it "creates a new tag" do
+    user = FactoryGirl.create(:user)
     visit '/'
     click_on "Sign In"
     fill_in 'Email', :with => user.email
@@ -16,6 +15,7 @@ describe "Tag creation path" do
   end
 
   it "rerenders new tag form if not filled out correctly" do
+    user = FactoryGirl.create(:user)
     visit '/'
     click_on "Sign In"
     fill_in 'Email', :with => user.email
@@ -28,6 +28,9 @@ describe "Tag creation path" do
   end
 
   it "adds a tag to a post" do
+    user = FactoryGirl.create(:user)
+    tag = FactoryGirl.create(:tag)
+    post = FactoryGirl.create(:post)
     visit '/'
     click_on "Sign In"
     fill_in 'Email', :with => user.email
@@ -43,6 +46,9 @@ describe "Tag creation path" do
   end
 
   it "removes a tag from a post" do
+    user = FactoryGirl.create(:user)
+    tag = FactoryGirl.create(:tag)
+    post = FactoryGirl.create(:post)
     visit '/'
     click_on "Sign In"
     fill_in 'Email', :with => user.email

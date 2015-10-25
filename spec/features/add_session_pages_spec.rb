@@ -1,8 +1,8 @@
 require 'rails_helper'
 
 describe "Session creation/User login path" do
-  user = FactoryGirl.create(:user)
   it "logs a user in and creates a new session" do
+    user = FactoryGirl.create(:user)
     visit '/'
     click_on "Sign In"
     fill_in 'Email', :with => user.email
@@ -12,6 +12,7 @@ describe "Session creation/User login path" do
   end
 
   it "displays an error if not logged in" do
+    user = FactoryGirl.create(:user)
     visit '/'
     click_on "Sign In"
     fill_in 'Email', :with => user.email
@@ -21,6 +22,7 @@ describe "Session creation/User login path" do
   end
 
   it "logs a user in and creates a new session" do
+    user = FactoryGirl.create(:user)
     visit '/'
     click_on "Sign In"
     fill_in 'Email', :with => user.email

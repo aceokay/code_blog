@@ -1,9 +1,9 @@
 require 'rails_helper'
 
 describe "Edit Post path" do
-  user = FactoryGirl.create(:user)
-  post = FactoryGirl.create(:post)
   it "edits a new post" do
+    user = FactoryGirl.create(:user)
+    post = FactoryGirl.create(:post)
     visit '/'
     click_on "Sign In"
     fill_in 'Email', :with => user.email
@@ -17,6 +17,8 @@ describe "Edit Post path" do
   end
 
   it "rerenders the edit form if cells are left blank" do
+    user = FactoryGirl.create(:user)
+    post = FactoryGirl.create(:post)
     visit '/'
     click_on "Sign In"
     fill_in 'Email', :with => user.email
