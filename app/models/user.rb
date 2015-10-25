@@ -6,8 +6,7 @@ class User < ActiveRecord::Base
   validates :name, :email, presence: true
   validates :email, uniqueness: true
   before_save :encrypt_password
-  # Enact when user model is updated
-  # before_save :make_admin
+  before_save :make_admin
 
   def encrypt_password
     self.password_salt = BCrypt::Engine.generate_salt
@@ -22,9 +21,9 @@ class User < ActiveRecord::Base
   end
 
   private
-  # def make_admin
-  #   if User.all.length < 1
-  #     self.admin = true
-  #   end
-  # end
+  def make_admin
+    if User.all.length < 1
+      self.admin = true
+    end
+  end
 end
