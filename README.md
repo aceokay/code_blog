@@ -1,14 +1,13 @@
 #Code Blog
 
-####Version 1.0, 16 October 2015
+####Version 2.0, 25 October 2015
 By Austin Kincaid
 
 ###Description
 An artisinal blog backed with Ruby on Rails.
 
 _Goals for future updates_
-* _Add authentication for admin access to edit posts._
-* _Mass deployment._
+* _Grant Users the ability to edit account information_
 
 ###Setup
 1. Clone the repo
