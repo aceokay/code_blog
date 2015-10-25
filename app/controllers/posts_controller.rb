@@ -37,7 +37,6 @@ class PostsController < ApplicationController
   def edit
     @post = Post.find(params[:id])
     @tags = Tag.all
-    render :edit
   end
 
   def update
@@ -52,9 +51,10 @@ class PostsController < ApplicationController
           @post.tags.push(tag)
         end
       end
-      redirect_to edit_post_path(@post)
+      redirect_to posts_path
     else
-      render :edit
+      flash[:notice] = "You must fill in all parts of the form."
+      redirect_to edit_post_path(@post)
     end
   end
 
