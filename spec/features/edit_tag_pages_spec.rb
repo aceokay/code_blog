@@ -10,6 +10,7 @@ describe "Tag edit path" do
     fill_in 'Password', :with => user.password
     click_on 'Log in'
     click_on tag.category
+    click_on 'Edit'
     fill_in 'Category', :with => "dougl"
     click_on 'Submit'
     expect(page).to have_content "dougl"
@@ -24,6 +25,7 @@ describe "Tag edit path" do
     fill_in 'Password', :with => user.password
     click_on 'Log in'
     click_on tag.category
+    click_on 'Edit'
     fill_in 'Category', :with => ""
     click_on 'Submit'
     expect(page).to have_content "Please fill the Category field"

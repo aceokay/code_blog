@@ -29,7 +29,9 @@
       <!-- Title -->
       <h2><%= link_to post.title, post_path(post) %></h2>
       <!-- Author -->
-      <p class="lead">by <a href="#"><%= post.user.name %></a></p>
+      <% if post.user.nil? %>
+        <p class="lead">by <a href="#"><%= post.user.name %></a></p>
+      <% end %>
       <hr>
       <!-- Date/Time -->
       <p><span class="glyphicon glyphicon-time"></span> <%= post.created_at.to_s(:short) %></p>

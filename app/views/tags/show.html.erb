@@ -1,13 +1,25 @@
-<h1><%= @tag.category %></h1>
-<div class="panel panel-default">
-  <div class="panel-heading">
-    <ul class="list-inline">
-      <li>Tagged Posts:</li>
+<div class="col-lg-8">
+  <h4><%= @tag.category %></h4>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <ul class="list-inline">
+        <li>Posts Tagged With <%= @tag.category %>:</li>
+          <% if current_user.admin %>
+            <li class="pull-right">
+              <%= link_to "Delete", tag_path(@tag), class: "btn btn-danger", data: {confirm: "Are you sure?", method: "delete"} %>
+            </li>
+            <li class="pull-right">
+              <%= link_to "Edit", edit_tag_path(@tag), class: "btn btn-default" %>
+            </li>
+          <% end %>
+      </ul>
+    </div>
+    <ul class="list-group">
+      <% @tag.posts.order(created_at: :desc).each do |post| %>
+        <li class="list-group-item">
+          <%= link_to post.title, post_path(post) %>
+        </li>
+      <% end %>
     </ul>
   </div>
-  <ul class="list-group">
-    <% @tag.posts.order(created_at: :desc).each do |post| %>
-      <li class="list-group-item"><%= post.title %></li>
-    <% end %>
-  </ul>
 </div>

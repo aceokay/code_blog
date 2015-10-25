@@ -1,5 +1,6 @@
 FactoryGirl.define do
   factory(:user) do
+    id(1)
     name('Sam')
     sequence :email do |n|
       (n + rand(100000)).to_s + "@example.com"
@@ -20,6 +21,7 @@ FactoryGirl.define do
   factory(:post) do
     title("Love is real")
     body("Build a home at home with love.")
+    user_id(1)
   end
 
   factory(:tag) do
