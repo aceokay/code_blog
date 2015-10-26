@@ -5,6 +5,7 @@ By Austin Kincaid
 
 ###Description
 An artisinal blog backed with Ruby on Rails.
+[Live Example Here](https://rocky-springs-6925.herokuapp.com/)
 
 _Goals for future updates_
 * _Grant Users the ability to edit account information_
